@@ -8,22 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Node",
-"class": &"HelperService",
-"language": &"GDScript",
-"path": "res://addons/GameBackend/services/helper.gd"
-}, {
-"base": "Node",
-"class": &"StateService",
-"language": &"GDScript",
-"path": "res://addons/GameBackend/services/state.gd"
-}]
-_global_script_class_icons={
-"HelperService": "",
-"StateService": ""
-}
-
 [application]
 
 config/name="Arcanoid"
