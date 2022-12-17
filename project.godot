@@ -8,10 +8,80 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "RefCounted",
+"class": &"Helper",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/helper.gd"
+}, {
+"base": "RefCounted",
+"class": &"LoggotAppender",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/appender/loggot_appender.gd"
+}, {
+"base": "LoggotAppender",
+"class": &"LoggotAsyncAppender",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/appender/loggot_async_appender.gd"
+}, {
+"base": "LoggotAppender",
+"class": &"LoggotConsoleAppender",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/appender/loggot_console_appender.gd"
+}, {
+"base": "RefCounted",
+"class": &"LoggotConstants",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/model/loggot_constants.gd"
+}, {
+"base": "RefCounted",
+"class": &"LoggotEncoder",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/encoder/loggot_encoder.gd"
+}, {
+"base": "LoggotEncoder",
+"class": &"LoggotEncoderDefault",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/encoder/loggot_encoder_default.gd"
+}, {
+"base": "RefCounted",
+"class": &"LoggotEvent",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/model/loggot_event.gd"
+}, {
+"base": "LoggotAppender",
+"class": &"LoggotFileAppender",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/appender/loggot_file_appender.gd"
+}, {
+"base": "RefCounted",
+"class": &"LoggotLogger",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/logger/loggot_logger.gd"
+}, {
+"base": "LoggotAppender",
+"class": &"LoggotSignalAppender",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/appender/loggot_signal_appender.gd"
+}]
+_global_script_class_icons={
+"Helper": "",
+"LoggotAppender": "",
+"LoggotAsyncAppender": "",
+"LoggotConsoleAppender": "",
+"LoggotConstants": "",
+"LoggotEncoder": "",
+"LoggotEncoderDefault": "",
+"LoggotEvent": "",
+"LoggotFileAppender": "",
+"LoggotLogger": "",
+"LoggotSignalAppender": ""
+}
+
 [application]
 
 config/name="Arcanoid"
-run/main_scene="res://Game/main.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
