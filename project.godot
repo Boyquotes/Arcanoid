@@ -10,9 +10,29 @@ config_version=5
 
 _global_script_classes=[{
 "base": "RefCounted",
+"class": &"BaseCommand",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/commands/base.gd"
+}, {
+"base": "Node",
+"class": &"CommandService",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/command.gd"
+}, {
+"base": "RefCounted",
 "class": &"Helper",
 "language": &"GDScript",
 "path": "res://addons/GameBackend/services/helper.gd"
+}, {
+"base": "Node",
+"class": &"InitTemplate",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/init_template.gd"
+}, {
+"base": "Node",
+"class": &"Logger",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/logger.gd"
 }, {
 "base": "RefCounted",
 "class": &"LoggotAppender",
@@ -63,9 +83,33 @@ _global_script_classes=[{
 "class": &"LoggotSignalAppender",
 "language": &"GDScript",
 "path": "res://addons/GameBackend/services/appender/loggot_signal_appender.gd"
+}, {
+"base": "Node",
+"class": &"Resources",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/resources.gd"
+}, {
+"base": "Node",
+"class": &"Scenes",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/scenes.gd"
+}, {
+"base": "Node",
+"class": &"Sounds",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/sound.gd"
+}, {
+"base": "Node",
+"class": &"State",
+"language": &"GDScript",
+"path": "res://addons/GameBackend/services/state.gd"
 }]
 _global_script_class_icons={
+"BaseCommand": "",
+"CommandService": "",
 "Helper": "",
+"InitTemplate": "",
+"Logger": "",
 "LoggotAppender": "",
 "LoggotAsyncAppender": "",
 "LoggotConsoleAppender": "",
@@ -75,14 +119,22 @@ _global_script_class_icons={
 "LoggotEvent": "",
 "LoggotFileAppender": "",
 "LoggotLogger": "",
-"LoggotSignalAppender": ""
+"LoggotSignalAppender": "",
+"Resources": "",
+"Scenes": "",
+"Sounds": "",
+"State": ""
 }
 
 [application]
 
 config/name="Arcanoid"
-run/main_scene="res://main.tscn"
+run/main_scene="res://addons/GameBackend/services/scenes/splash/splash.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color(0.980392, 0.980392, 0.980392, 1)
 config/icon="res://icon.svg"
 
 [autoload]

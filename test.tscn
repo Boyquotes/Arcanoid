@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm83it66nu6f8"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_7pv8e"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 107.0
+offset_top = 65.0
+offset_right = 229.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 18
+text = "to main"
+script = ExtResource("1_7pv8e")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
