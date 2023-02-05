@@ -21,3 +21,8 @@ data_*/
 /.godot/editor/favorites
 /.godot/editor/create_recent.Node
 /.godot/.gdignore
+*.import
+/.godot/editor/filesystem_cache8
+/.godot/editor/favorites.Resource
+/.godot/editor/favorites.Object
+/.godot/editor/create_recent.Object
