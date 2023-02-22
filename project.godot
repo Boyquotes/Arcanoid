@@ -35,3 +35,12 @@ enabled=PackedStringArray("res://addons/GameBackend/plugin.cfg")
 [internationalization]
 
 locale/translations=PackedStringArray("res://addons/GameBackend/translate/translate.en.translation", "res://addons/GameBackend/translate/translate.ru.translation")
+
+[physics]
+
+2d/default_linear_damp=0.0
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

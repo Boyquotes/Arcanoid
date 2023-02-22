@@ -3,7 +3,6 @@ extends Control
 var _state_dict:Dictionary
 @onready var _state:State = Services.state
 @onready var _logs:LoggotLogger = Services.logs
-@onready var _scenes:Scenes = Services.scenes
 @onready var _sounds:Sounds = Services.sounds
 
 func _ready():

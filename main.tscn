@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://RigidBody2D.gd" id="5_25ch7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yra0g"]
-radius = 17.0
-height = 284.0
+radius = 18.9999
+height = 292.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n80fp"]
 friction = 0.0
@@ -104,7 +104,8 @@ text = "to test"
 
 [node name="CB2D_platform" type="CharacterBody2D" parent="."]
 position = Vector2(62, -8)
-disable_mode = 1
+disable_mode = 2
+safe_margin = 2.0
 script = ExtResource("2_v6o0m")
 metadata/_edit_group_ = true
 
@@ -117,7 +118,7 @@ region_enabled = true
 region_rect = Rect2(427, 101, 14, 121)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CB2D_platform"]
-position = Vector2(499, 604)
+position = Vector2(505, 604)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yra0g")
 
