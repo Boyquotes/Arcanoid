@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://y25q77yycac2"]
+
+[ext_resource type="PackedScene" uid="uid://dpvarceb6g2vk" path="res://game/items/Blue_rect.tscn" id="1_656tr"]
+
+[node name="GridContainer" type="GridContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 101.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 1
+columns = 8
+
+[node name="MarginContainer" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer2" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer3" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer4" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer5" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer6" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer7" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer8" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer9" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer10" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer11" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer12" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer13" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer14" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer15" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2
+
+[node name="MarginContainer16" parent="." instance=ExtResource("1_656tr")]
+layout_mode = 2

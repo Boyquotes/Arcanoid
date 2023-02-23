@@ -4,6 +4,9 @@ var _sounds:Sounds = Services.sounds
 var _logs:LoggotLogger = Services.logs
 var _interactive = null
 const _id_interactive = "BALL"
+var speed:float = 200
+
+var _counter = 1
 
 
 func _ready():
@@ -17,6 +20,12 @@ func _ready():
 
 
 func _on_body_entered(body):
+	if _counter % 9 == 0:
+		speed += 50
+	linear_velocity = linear_velocity.normalized() * speed
+	_counter += 1
+	
+	$Label.text = str(linear_velocity.length())
 	if _interactive:
 		_interactive.interact(body)
 	match str(body.name):
@@ -25,5 +34,5 @@ func _on_body_entered(body):
 		"CB2D_platform":
 			_sounds.play("res://addons/GameBackend/sounds/impact/impactGlass_light_000.ogg")
 			
-func _on_interactive_hitpoint_end(type, value):
+func _on_interactive_hitpoint_end(_type, _value):
 	queue_free()

@@ -17,11 +17,11 @@ func _exit_tree():
 
 func _on_button_pressed():
 	_sounds.play("res://addons/GameBackend/sounds/interface/click_001.ogg")
-	#scenes.change_scene_from_path_with_transite("res://test.tscn")
 	$RigidBody2D.apply_impulse(Vector2(200, 200))
-	#$RigidBody2D.apply_force(Vector2(20, 20))
 
 func _on_resized():
 	var polygon:PackedVector2Array = [Vector2(0, 0), Vector2(size.x, 0), Vector2(size.x, size.y), Vector2(0, size.y)]
 	$SB_Dynamic_perimetr/CollisionPolygon2D.polygon = polygon
+	$SB_boll_finish.position.y = size.y - 5
+	$SB_boll_finish/CollisionShape2D.shape.size.x = size.x
 

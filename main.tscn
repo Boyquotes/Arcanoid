@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccu11eal3i5yh"]
+[gd_scene load_steps=12 format=3 uid="uid://ccu11eal3i5yh"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bisqd"]
-[ext_resource type="PackedScene" uid="uid://dpvarceb6g2vk" path="res://game/items/Blue_rect.tscn" id="2_q0ccu"]
+[ext_resource type="PackedScene" uid="uid://y25q77yycac2" path="res://game/levels/grid_container_L1.tscn" id="2_lx6ux"]
 [ext_resource type="Script" path="res://CB2D_platform.gd" id="2_v6o0m"]
 [ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="4_4ljww"]
 [ext_resource type="Script" path="res://RigidBody2D.gd" id="5_25ch7"]
+[ext_resource type="Script" path="res://SB_boll_finish.gd" id="6_6lpev"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yra0g"]
 radius = 18.9999
@@ -16,6 +17,9 @@ bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4g7a"]
 radius = 19.6469
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_575lj"]
+size = Vector2(1141, 5.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dsx5d"]
 friction = 0.0
@@ -30,65 +34,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bisqd")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="GridContainer" parent="Control" instance=ExtResource("2_lx6ux")]
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -517.5
-offset_right = 517.5
-offset_bottom = 325.0
-grow_horizontal = 2
-theme_override_constants/h_separation = 5
-theme_override_constants/v_separation = 1
-columns = 8
-
-[node name="MarginContainer" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer2" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer3" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer4" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer5" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer6" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer7" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer8" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer9" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer10" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer11" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer12" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer13" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer14" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer15" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
-
-[node name="MarginContainer16" parent="GridContainer" instance=ExtResource("2_q0ccu")]
-layout_mode = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -105,7 +61,7 @@ text = "to test"
 [node name="CB2D_platform" type="CharacterBody2D" parent="."]
 position = Vector2(62, -8)
 disable_mode = 2
-safe_margin = 2.0
+safe_margin = 1.0
 script = ExtResource("2_v6o0m")
 metadata/_edit_group_ = true
 
@@ -123,7 +79,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yra0g")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(558, 528)
+position = Vector2(561, 548)
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_n80fp")
 gravity_scale = 0.0
@@ -131,7 +87,6 @@ custom_integrator = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("5_25ch7")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 position = Vector2(0.49999, 1.49999)
@@ -143,9 +98,26 @@ region_rect = Rect2(373, 0, 32, 32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_k4g7a")
 
+[node name="Label" type="Label" parent="RigidBody2D"]
+offset_left = -20.0
+offset_top = -58.0
+offset_right = 20.0
+offset_bottom = -32.0
+text = "test"
+
+[node name="SB_boll_finish" type="StaticBody2D" parent="."]
+position = Vector2(0, 647)
+script = ExtResource("6_6lpev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SB_boll_finish"]
+position = Vector2(564.5, -0.75)
+shape = SubResource("RectangleShape2D_575lj")
+
 [node name="SB_Dynamic_perimetr" type="StaticBody2D" parent="."]
+position = Vector2(-1, -6)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_dsx5d")
+metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SB_Dynamic_perimetr"]
 build_mode = 1
