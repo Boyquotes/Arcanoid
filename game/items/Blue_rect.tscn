@@ -1,32 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpvarceb6g2vk"]
+[gd_scene load_steps=2 format=3 uid="uid://dpvarceb6g2vk"]
 
-[ext_resource type="Script" path="res://game/items/SB_one_punch_rect.gd" id="1_4n5qx"]
-[ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="1_swf8y"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sk2df"]
-friction = 0.0
-bounce = 0.88
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bva3"]
-size = Vector2(127, 48)
+[ext_resource type="PackedScene" uid="uid://byhkwb68oe5ec" path="res://game/items/sb_blue_rect.tscn" id="1_rj5da"]
 
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(125, 50)
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 0.109
+anchor_bottom = 0.077
+offset_right = -125.568
+offset_bottom = -49.896
 
-[node name="SB_Blue_rect" type="StaticBody2D" parent="."]
-position = Vector2(62, 24)
-disable_mode = 1
-physics_material_override = SubResource("PhysicsMaterial_sk2df")
-script = ExtResource("1_4n5qx")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="SB_Blue_rect"]
-texture = ExtResource("1_swf8y")
-region_enabled = true
-region_rect = Rect2(0, 0, 130, 49)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SB_Blue_rect"]
-position = Vector2(0, 1.00003)
-shape = SubResource("RectangleShape2D_2bva3")
+[node name="SB_Blue_rect" parent="." instance=ExtResource("1_rj5da")]

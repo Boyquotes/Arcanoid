@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgp1do573ercr"]
+
+[ext_resource type="Script" path="res://assets/locations/main/grid_container.gd" id="1_1rh8v"]
+[ext_resource type="PackedScene" uid="uid://dpvarceb6g2vk" path="res://game/items/Blue_rect.tscn" id="2_2qlwr"]
+
+[node name="GridContainer" type="GridContainer" groups=["grid_tiles"]]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.156
+offset_bottom = -0.0880051
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 1
+columns = 8
+script = ExtResource("1_1rh8v")
+
+[node name="Control" parent="." instance=ExtResource("2_2qlwr")]
+layout_mode = 2
+
+[node name="Control2" parent="." instance=ExtResource("2_2qlwr")]
+layout_mode = 2
+
+[node name="Control3" parent="." instance=ExtResource("2_2qlwr")]
+layout_mode = 2
+
+[node name="Control4" parent="." instance=ExtResource("2_2qlwr")]
+layout_mode = 2
+
+[node name="Control5" parent="." instance=ExtResource("2_2qlwr")]
+layout_mode = 2
+
+[node name="Control6" parent="." instance=ExtResource("2_2qlwr")]
+layout_mode = 2

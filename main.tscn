@@ -1,22 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccu11eal3i5yh"]
+[gd_scene load_steps=9 format=3 uid="uid://eg5bn4bh4d5l"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bisqd"]
-[ext_resource type="PackedScene" uid="uid://y25q77yycac2" path="res://game/levels/grid_container_L1.tscn" id="2_lx6ux"]
 [ext_resource type="Script" path="res://CB2D_platform.gd" id="2_v6o0m"]
 [ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="4_4ljww"]
-[ext_resource type="Script" path="res://RigidBody2D.gd" id="5_25ch7"]
 [ext_resource type="Script" path="res://SB_boll_finish.gd" id="6_6lpev"]
+[ext_resource type="PackedScene" uid="uid://bbdtly3nf6wef" path="res://addons/GameBackend/scenes/level_hud.tscn" id="7_csvs6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yra0g"]
 radius = 18.9999
-height = 292.0
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n80fp"]
-friction = 0.0
-bounce = 1.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_k4g7a"]
-radius = 19.6469
+height = 164.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_575lj"]
 size = Vector2(1141, 5.5)
@@ -34,17 +26,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bisqd")
 
-[node name="Control" type="Control" parent="."]
+[node name="C_grid" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
+anchor_left = 0.027
+anchor_top = 0.066
+anchor_right = 0.974
+anchor_bottom = 0.733
+offset_left = -0.104
+offset_top = 0.231998
+offset_right = -0.0480957
+offset_bottom = 0.0159607
 grow_horizontal = 2
-
-[node name="GridContainer" parent="Control" instance=ExtResource("2_lx6ux")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -59,51 +51,22 @@ offset_bottom = -0.272034
 text = "to test"
 
 [node name="CB2D_platform" type="CharacterBody2D" parent="."]
-position = Vector2(62, -8)
+position = Vector2(559, 619)
 disable_mode = 2
 safe_margin = 1.0
 script = ExtResource("2_v6o0m")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CB2D_platform"]
-position = Vector2(502.175, 604)
 rotation = 1.5708
-scale = Vector2(2.25, 2.40933)
+scale = Vector2(2.60997, 1.29519)
 texture = ExtResource("4_4ljww")
 region_enabled = true
 region_rect = Rect2(427, 101, 14, 121)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CB2D_platform"]
-position = Vector2(505, 604)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yra0g")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(561, 548)
-input_pickable = true
-physics_material_override = SubResource("PhysicsMaterial_n80fp")
-gravity_scale = 0.0
-custom_integrator = true
-max_contacts_reported = 1
-contact_monitor = true
-script = ExtResource("5_25ch7")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(0.49999, 1.49999)
-scale = Vector2(1.53125, 1.46875)
-texture = ExtResource("4_4ljww")
-region_enabled = true
-region_rect = Rect2(373, 0, 32, 32)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_k4g7a")
-
-[node name="Label" type="Label" parent="RigidBody2D"]
-offset_left = -20.0
-offset_top = -58.0
-offset_right = 20.0
-offset_bottom = -32.0
-text = "test"
 
 [node name="SB_boll_finish" type="StaticBody2D" parent="."]
 position = Vector2(0, 647)
@@ -122,6 +85,13 @@ metadata/_edit_group_ = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SB_Dynamic_perimetr"]
 build_mode = 1
 
+[node name="MC_level_hud" parent="." instance=ExtResource("7_csvs6")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="_on_body_entered"]
