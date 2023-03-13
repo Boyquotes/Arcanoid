@@ -8,16 +8,21 @@ var _state_dict:Dictionary
 var _ball_pc = preload("res://game/items/rb_2d_ball.tscn")
 var _ball:Node2D = null
 var _lifes = 5
-const _localion_name = "main"
 var _location_node:Node = null
 
+const _localion_name = "main"
+const _lives_key = "lives"
 
 func _ready():
 	_state_dict = _state.get_dict("main")
 	_logs.info("Main scene > ready")
 	var polygon:PackedVector2Array = [Vector2(0, 0), Vector2(size.x, 0), Vector2(size.x, size.y), Vector2(0, size.y)]
 	$SB_Dynamic_perimetr/CollisionPolygon2D.polygon = polygon
-
+	
+	var loc_cfg_dict = _locations.get_cfg_dict_for_location(_localion_name)
+	var lifes_dict = loc_cfg_dict.get(_lives_key, {}) as Dictionary
+	_lifes = lifes_dict.get(_lives_key, 5)
+	
 	_location_node = _locations.get_next_level_for_location(_localion_name) as Node
 	if _location_node:
 		$C_grid.add_child(_location_node)
