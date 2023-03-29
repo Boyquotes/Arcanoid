@@ -48,7 +48,7 @@ func _on_resized():
 
 func _state_start():
 	$MC_level_hud.hud_event(HUD.EHandler.LIFE, HUD.EType.ADD, _lifes)
-	create_ball()
+	call_deferred("create_ball")
 	
 func _state_success():
 	if _location_node:
@@ -67,11 +67,9 @@ func on_ball_mash():
 	if _lifes == 0:
 		_check_finish_condition()
 	else:
-		create_ball()
+		call_deferred("create_ball")
 	
 func create_ball():
-	if _ball:
-		_ball.queue_free()
 	_ball = _ball_pc.instantiate() as Node2D
 	add_child(_ball)
 	_ball.send_final.connect(on_ball_mash)

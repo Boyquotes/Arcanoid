@@ -18,12 +18,6 @@ func _on_body_entered(body):
 		speed += 50
 	linear_velocity = linear_velocity.normalized() * speed
 	_counter += 1
-	
-	match str(body.name):
-		"SB_Dynamic_perimetr":
-			_sounds.play("res://addons/GameBackend/sounds/impact/impactBell_heavy_004.ogg")
-		#"CB2D_platform":
-		#	_sounds.play("res://addons/GameBackend/sounds/impact/impactGlass_light_000.ogg")
 			
 func _on_interactive_hitpoint_end(_type, _value):
 	emit_signal("send_final")

@@ -2,12 +2,9 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_bisqd"]
 [ext_resource type="PackedScene" path="res://assets/items/CB2DPlatform.tscn" id="2_iu36n"]
+[ext_resource type="PackedScene" uid="uid://tjcyhr8in2mw" path="res://assets/items/SBDynamicPerimetr.tscn" id="4_f6f2l"]
 [ext_resource type="PackedScene" uid="uid://p8hx7cdy7ex1" path="res://assets/items/SBBallFinish.tscn" id="4_jhx5p"]
 [ext_resource type="PackedScene" uid="uid://bbdtly3nf6wef" path="res://addons/GameBackend/scenes/level_hud.tscn" id="7_csvs6"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dsx5d"]
-friction = 0.0
-bounce = 1.0
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -46,14 +43,7 @@ text = "to test"
 
 [node name="SB_ball_finish" parent="." instance=ExtResource("4_jhx5p")]
 
-[node name="SB_Dynamic_perimetr" type="StaticBody2D" parent="."]
-position = Vector2(-1, -6)
-disable_mode = 1
-physics_material_override = SubResource("PhysicsMaterial_dsx5d")
-metadata/_edit_group_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SB_Dynamic_perimetr"]
-build_mode = 1
+[node name="SB_Dynamic_perimetr" parent="." instance=ExtResource("4_f6f2l")]
 
 [node name="MC_level_hud" parent="." instance=ExtResource("7_csvs6")]
 layout_mode = 0
