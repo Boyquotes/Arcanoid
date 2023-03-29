@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://assets/items/CB2DPlatform.gd" id="1_wchau"]
+[ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="2_cgqun"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yra0g"]
+radius = 18.9999
+height = 164.0
+
+[node name="CB2D_platform" type="CharacterBody2D"]
+position = Vector2(559, 619)
+disable_mode = 2
+safe_margin = 1.0
+script = ExtResource("1_wchau")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2.60997, 1.29519)
+texture = ExtResource("2_cgqun")
+region_enabled = true
+region_rect = Rect2(427, 101, 14, 121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yra0g")

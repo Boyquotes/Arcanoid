@@ -1,17 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://eg5bn4bh4d5l"]
+[gd_scene load_steps=6 format=3 uid="uid://eg5bn4bh4d5l"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bisqd"]
-[ext_resource type="Script" path="res://CB2D_platform.gd" id="2_v6o0m"]
-[ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="4_4ljww"]
-[ext_resource type="Script" path="res://SB_boll_finish.gd" id="6_6lpev"]
+[ext_resource type="PackedScene" path="res://assets/items/CB2DPlatform.tscn" id="2_iu36n"]
+[ext_resource type="PackedScene" uid="uid://p8hx7cdy7ex1" path="res://assets/items/SBBallFinish.tscn" id="4_jhx5p"]
 [ext_resource type="PackedScene" uid="uid://bbdtly3nf6wef" path="res://addons/GameBackend/scenes/level_hud.tscn" id="7_csvs6"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yra0g"]
-radius = 18.9999
-height = 164.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_575lj"]
-size = Vector2(1141, 5.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dsx5d"]
 friction = 0.0
@@ -50,31 +42,9 @@ offset_right = 0.208008
 offset_bottom = -0.272034
 text = "to test"
 
-[node name="CB2D_platform" type="CharacterBody2D" parent="."]
-position = Vector2(559, 619)
-disable_mode = 2
-safe_margin = 1.0
-script = ExtResource("2_v6o0m")
-metadata/_edit_group_ = true
+[node name="CB2D_platform" parent="." instance=ExtResource("2_iu36n")]
 
-[node name="Sprite2D" type="Sprite2D" parent="CB2D_platform"]
-rotation = 1.5708
-scale = Vector2(2.60997, 1.29519)
-texture = ExtResource("4_4ljww")
-region_enabled = true
-region_rect = Rect2(427, 101, 14, 121)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CB2D_platform"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_yra0g")
-
-[node name="SB_boll_finish" type="StaticBody2D" parent="."]
-position = Vector2(0, 647)
-script = ExtResource("6_6lpev")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SB_boll_finish"]
-position = Vector2(564.5, -0.75)
-shape = SubResource("RectangleShape2D_575lj")
+[node name="SB_ball_finish" parent="." instance=ExtResource("4_jhx5p")]
 
 [node name="SB_Dynamic_perimetr" type="StaticBody2D" parent="."]
 position = Vector2(-1, -6)

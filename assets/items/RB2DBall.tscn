@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://nb6cebmpeqpe"]
+[gd_scene load_steps=5 format=3 uid="uid://bj6g6u0rfnmv4"]
 
-[ext_resource type="Script" path="res://RigidBody2D.gd" id="1_cluic"]
-[ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="2_ycuab"]
+[ext_resource type="Script" path="res://assets/items/RB2DBall.gd" id="1_ptjwl"]
+[ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="2_6a7oc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n80fp"]
 friction = 0.0
@@ -17,16 +17,14 @@ gravity_scale = 0.0
 custom_integrator = true
 max_contacts_reported = 1
 contact_monitor = true
-script = ExtResource("1_cluic")
+script = ExtResource("1_ptjwl")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.53125, 1.46875)
-texture = ExtResource("2_ycuab")
+texture = ExtResource("2_6a7oc")
 region_enabled = true
 region_rect = Rect2(373, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_k4g7a")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

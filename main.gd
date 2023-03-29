@@ -5,7 +5,7 @@ var _state_dict:Dictionary
 @onready var _logs:LoggotLogger = Services.logs
 @onready var _sounds:Sounds = Services.sounds
 @onready var _locations:Locations = Services.locations
-var _ball_pc = preload("res://game/items/rb_2d_ball.tscn")
+var _ball_pc = preload("res://assets/items/RB2DBall.tscn")
 var _ball:Node2D = null
 var _lifes = 5
 var _location_node:Node = null
@@ -43,8 +43,8 @@ func _on_button_pressed():
 func _on_resized():
 	var polygon:PackedVector2Array = [Vector2(0, 0), Vector2(size.x, 0), Vector2(size.x, size.y), Vector2(0, size.y)]
 	$SB_Dynamic_perimetr/CollisionPolygon2D.polygon = polygon
-	$SB_boll_finish.position.y = size.y - 5
-	$SB_boll_finish/CollisionShape2D.shape.size.x = size.x
+	$SB_ball_finish.position.y = size.y - 5
+	$SB_ball_finish/CollisionShape2D.shape.size.x = size.x
 
 func _state_start():
 	$MC_level_hud.hud_event(HUD.EHandler.LIFE, HUD.EType.ADD, _lifes)

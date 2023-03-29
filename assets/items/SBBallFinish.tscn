@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://p8hx7cdy7ex1"]
+
+[ext_resource type="Script" path="res://assets/items/SBBallFinish.gd" id="1_jf77l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_575lj"]
+size = Vector2(1141, 5.5)
+
+[node name="SB_ball_finish" type="StaticBody2D"]
+position = Vector2(0, 647)
+script = ExtResource("1_jf77l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(564.5, -0.75)
+shape = SubResource("RectangleShape2D_575lj")

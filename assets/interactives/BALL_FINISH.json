@@ -1,1 +1,1 @@
-{"base_properties":{"script":"res://addons/GameBackend/tools/blocks/scripts/base_properties.gd","static_fields":{"damage":{"damage":"99999"},"hitpoints":{"hitpoints":"-1"}}},"blocks":{}}
+{"base_properties":{"script":"res://addons/GameBackend/tools/blocks/scripts/base_properties.gd","static_fields":{"damage":{"damage":100},"hitpoints":{"hitpoints":-1}}},"blocks":{}}

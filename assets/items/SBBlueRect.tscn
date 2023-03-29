@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://byhkwb68oe5ec"]
+[gd_scene load_steps=5 format=3 uid="uid://dq6yrmea4it1u"]
 
-[ext_resource type="Script" path="res://game/items/SB_one_punch_rect.gd" id="1_gu6yy"]
-[ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="2_uy1jo"]
+[ext_resource type="Script" path="res://assets/items/SBBlueRect.gd" id="1_5txis"]
+[ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="2_gh708"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sk2df"]
 friction = 0.0
@@ -14,11 +14,11 @@ size = Vector2(127, 48)
 position = Vector2(62, 24)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_sk2df")
-script = ExtResource("1_gu6yy")
+script = ExtResource("1_5txis")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_uy1jo")
+texture = ExtResource("2_gh708")
 region_enabled = true
 region_rect = Rect2(0, 0, 130, 49)
 
