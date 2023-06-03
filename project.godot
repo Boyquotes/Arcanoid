@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Arcanoid"
 run/main_scene="res://addons/GameBackend/services/scenes/splash/splash.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
+config/features=PackedStringArray("4.1", "Forward Plus")
 run/flush_stdout_on_print=true
 boot_splash/bg_color=Color(0.980392, 0.980392, 0.980392, 1)
 boot_splash/show_image=false
@@ -30,7 +30,7 @@ dialogues_selected_dialogue="f8991765-0fff-4d5c-b806-f18501d05346"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GameBackend/plugin.cfg")
+enabled=PackedStringArray()
 
 [internationalization]
 

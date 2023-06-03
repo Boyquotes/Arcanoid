@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://hkatff7qi7wv"]
 
 [ext_resource type="Script" path="res://assets/items/CB2DPlatform.gd" id="1_wchau"]
 [ext_resource type="Texture2D" uid="uid://bn5uwjvvrakyu" path="res://game/assets/rollingBall_sheet.png" id="2_cgqun"]

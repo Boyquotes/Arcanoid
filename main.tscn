@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://eg5bn4bh4d5l"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_bisqd"]
-[ext_resource type="PackedScene" path="res://assets/items/CB2DPlatform.tscn" id="2_iu36n"]
-[ext_resource type="PackedScene" uid="uid://tjcyhr8in2mw" path="res://assets/items/SBDynamicPerimetr.tscn" id="4_f6f2l"]
-[ext_resource type="PackedScene" uid="uid://p8hx7cdy7ex1" path="res://assets/items/SBBallFinish.tscn" id="4_jhx5p"]
-[ext_resource type="PackedScene" uid="uid://bbdtly3nf6wef" path="res://addons/GameBackend/scenes/level_hud.tscn" id="7_csvs6"]
+[ext_resource type="Script" path="res://main.gd" id="1_xh2ko"]
+[ext_resource type="PackedScene" uid="uid://hkatff7qi7wv" path="res://assets/items/CB2DPlatform.tscn" id="2_8u06a"]
+[ext_resource type="PackedScene" uid="uid://p8hx7cdy7ex1" path="res://assets/items/SBBallFinish.tscn" id="3_tx70t"]
+[ext_resource type="PackedScene" uid="uid://tjcyhr8in2mw" path="res://assets/items/SBDynamicPerimetr.tscn" id="4_qkq52"]
+[ext_resource type="PackedScene" uid="uid://bbdtly3nf6wef" path="res://addons/GameBackend/scenes/level_hud.tscn" id="5_5yvyh"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bisqd")
+script = ExtResource("1_xh2ko")
 
 [node name="C_grid" type="Control" parent="."]
 layout_mode = 1
@@ -39,13 +39,13 @@ offset_right = 0.208008
 offset_bottom = -0.272034
 text = "to test"
 
-[node name="CB2D_platform" parent="." instance=ExtResource("2_iu36n")]
+[node name="CB2D_platform" parent="." instance=ExtResource("2_8u06a")]
 
-[node name="SB_ball_finish" parent="." instance=ExtResource("4_jhx5p")]
+[node name="SB_ball_finish" parent="." instance=ExtResource("3_tx70t")]
 
-[node name="SB_Dynamic_perimetr" parent="." instance=ExtResource("4_f6f2l")]
+[node name="SB_Dynamic_perimetr" parent="." instance=ExtResource("4_qkq52")]
 
-[node name="MC_level_hud" parent="." instance=ExtResource("7_csvs6")]
+[node name="MC_level_hud" parent="." instance=ExtResource("5_5yvyh")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
